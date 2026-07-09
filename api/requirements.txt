@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+supabase
+httpx
+google-generativeai
+groq
+pydantic
+python-jose
+weasyprint
+numpy

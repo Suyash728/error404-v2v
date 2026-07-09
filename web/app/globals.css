@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fffbfc;
+  --foreground: #2b1420;
+  --surface: #ffffff;
+  --border: #f4dbe3;
+
+  --pink-50: #fff5f7;
+  --pink-100: #ffe4ec;
+  --pink-200: #ffc2d4;
+  --pink-300: #ff9fbb;
+  --pink-400: #ff74a1;
+  --pink-500: #f2477f;
+  --pink-600: #d62e63;
+  --pink-700: #b01f4d;
+  --pink-800: #85173b;
+  --pink-900: #5c0f28;
+
+  /* Cycle phase palettes: each has a DEFAULT (accents, icons) and a -soft (backgrounds, chips) */
+  --phase-menstrual: #d6336c;
+  --phase-menstrual-soft: #fbe0ea;
+  --phase-follicular: #e8890c;
+  --phase-follicular-soft: #fff3d6;
+  --phase-ovulation: #0ca678;
+  --phase-ovulation-soft: #d9f7ef;
+  --phase-luteal: #6741d9;
+  --phase-luteal-soft: #ece6fd;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
