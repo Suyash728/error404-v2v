@@ -12,6 +12,8 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
+from constants import Symptom
+
 IntentionMode = Literal["track", "avoid", "ttc"]
 ReminderKind = Literal["period", "fertile", "contraception", "appointment"]
 
@@ -58,10 +60,10 @@ class Cycle(CycleBase):
 class DailyLogBase(BaseModel):
     log_date: date
     flow: Optional[int] = Field(default=None, ge=0, le=4)
-    symptoms: list[str] = Field(default_factory=list)
+    symptoms: list[Symptom] = Field(default_factory=list)
     mood: Optional[int] = Field(default=None, ge=1, le=5)
     energy: Optional[int] = Field(default=None, ge=1, le=5)
-    water_ml: Optional[int] = None
+    water_ml: Optional[int] = Field(default=None, ge=0)
     bbt: Optional[float] = None
     notes: Optional[str] = None
 

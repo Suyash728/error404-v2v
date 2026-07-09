@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_SVG_START:ANIMATION_14 class="fixed inset-0 w-full h-full" --><div class="fixed inset-0 w-full h-full" id="animated-svg-ANIMATION_14" style="display:block;"><svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Background Glow -->
+<circle cx="100" cy="100" fill="#FFE4EC" opacity="0.5" r="80">
+<animate attributename="r" dur="3s" repeatcount="indefinite" values="75;85;75"></animate>
+</circle>
+<!-- Stem -->
+<path d="M100 180 Q100 150 100 130" fill="none" stroke="#81C784" stroke-linecap="round" stroke-width="6"></path>
+<!-- Petals (Animated for a "Bloom" feel) -->
+<g transform="translate(100, 110)">
+<!-- Bottom Petal -->
+<path d="M0 0 Q20 30 0 50 Q-20 30 0 0" fill="#FF6B9D">
+<animatetransform attributename="transform" dur="2s" repeatcount="indefinite" type="scale" values="1;1.1;1"></animatetransform>
+</path>
+<!-- Left Petal -->
+<path d="M0 0 Q-30 20 -50 0 Q-30 -20 0 0" fill="#FF8FB1" transform="rotate(-30)">
+<animatetransform additive="sum" attributename="transform" dur="2.2s" repeatcount="indefinite" type="scale" values="1;1.1;1"></animatetransform>
+</path>
+<!-- Right Petal -->
+<path d="M0 0 Q30 20 50 0 Q30 -20 0 0" fill="#FF8FB1" transform="rotate(30)">
+<animatetransform additive="sum" attributename="transform" dur="2.4s" repeatcount="indefinite" type="scale" values="1;1.1;1"></animatetransform>
+</path>
+<!-- Top Petal -->
+<path d="M0 0 Q20 -30 0 -50 Q-20 -30 0 0" fill="#FF4081">
+<animatetransform additive="sum" attributename="transform" dur="2.6s" repeatcount="indefinite" type="scale" values="1;1.2;1"></animatetransform>
+</path>
+</g>
+<!-- Center -->
+<circle cx="100" cy="110" fill="#FFD54F" r="15"></circle>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_14 -->
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arohi Wellness - Home Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "phase-ovulatory-main": "#FF4081",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#ddbfc5",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#25181c",
+                      "tertiary": "#b90c55",
+                      "phase-luteal": "#CE93D8",
+                      "surface-container-high": "#fbe2e8",
+                      "background": "#fff8f8",
+                      "surface-container-highest": "#f5dce3",
+                      "on-tertiary-fixed": "#3f0018",
+                      "phase-follicular": "#FF8FB1",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544248",
+                      "secondary-fixed-dim": "#d9c0c8",
+                      "phase-menstrual": "#E63970",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#ffecf0",
+                      "surface": "#fff8f8",
+                      "on-secondary-container": "#715d64",
+                      "on-tertiary-fixed-variant": "#8f003f",
+                      "inverse-surface": "#3b2c31",
+                      "surface-container": "#ffe8ee",
+                      "on-tertiary-container": "#6f002f",
+                      "on-primary-fixed": "#3f001b",
+                      "surface-tint": "#ac2a5d",
+                      "primary-container": "#ff6b9d",
+                      "on-surface-variant": "#574146",
+                      "on-surface": "#25181c",
+                      "inverse-primary": "#ffb1c5",
+                      "on-primary-fixed-variant": "#8c0a46",
+                      "outline": "#8a7176",
+                      "phase-ovulatory-accent": "#FFD54F",
+                      "primary-fixed-dim": "#ffb1c5",
+                      "tertiary-container": "#ff6c95",
+                      "surface-blush": "#FFF5F8",
+                      "on-primary-container": "#6e0035",
+                      "surface-variant": "#f5dce3",
+                      "error-container": "#ffdad6",
+                      "primary": "#ac2a5d",
+                      "on-secondary-fixed": "#26171d",
+                      "tertiary-fixed": "#ffd9df",
+                      "surface-container-low": "#fff0f3",
+                      "surface-dim": "#ecd4da",
+                      "secondary-fixed": "#f6dce4",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#6d5960",
+                      "text-muted": "#8A767C",
+                      "tertiary-fixed-dim": "#ffb1c2",
+                      "primary-fixed": "#ffd9e1",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fff8f8",
+                      "secondary-container": "#f3d9e1",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1.25rem"
+              },
+              "spacing": {
+                      "container-padding": "20px",
+                      "touch-target-min": "48px",
+                      "base": "8px",
+                      "section-margin": "32px",
+                      "stack-gap": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Nunito Sans"
+                      ],
+                      "title-md": [
+                              "Nunito Sans"
+                      ],
+                      "label-caps": [
+                              "Nunito Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Nunito Sans"
+                      ],
+                      "body-sm": [
+                              "Nunito Sans"
+                      ],
+                      "headline-lg": [
+                              "Nunito Sans"
+                      ],
+                      "button-text": [
+                              "Nunito Sans"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "button-text": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f8;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .soft-shadow {
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.08);
+        }
+
+        .cycle-wheel-container {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto;
+        }
+
+        .cycle-wheel-svg {
+            transform: rotate(-90deg);
+        }
+
+        .cycle-wheel-bg {
+            fill: none;
+            stroke: #f5dce3;
+            stroke-width: 16;
+        }
+
+        .cycle-wheel-progress {
+            fill: none;
+            stroke: #CE93D8;
+            stroke-width: 16;
+            stroke-linecap: round;
+            stroke-dasharray: 628; /* 2 * pi * r (approx 100 * 2 * 3.14) */
+            stroke-dashoffset: 400; /* Represents current phase */
+            filter: drop-shadow(0px 0px 8px rgba(206, 147, 216, 0.4));
+        }
+        
+        .hydration-ring {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .hydration-bg {
+            fill: none;
+            stroke: #f5dce3;
+            stroke-width: 8;
+        }
+
+        .hydration-progress {
+            fill: none;
+            stroke: #ff6b9d;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 201; /* 2 * pi * r (approx 32 * 2 * 3.14) */
+            stroke-dashoffset: 75; /* 5/8 progress */
+        }
+    </style>
+</head>
+<body class="font-body-lg text-on-surface pb-[100px]">
+<main class="max-w-[480px] mx-auto px-container-padding pt-6 flex flex-col gap-section-margin">
+<!-- Header Section -->
+<header class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A soft, cute, minimalist lotus flower mascot named Sakhi. Friendly expression, rounded organic petals, warm pink and blush colors. Modern vector style, simple and welcoming. High-key light-mode background." src="https://lh3.googleusercontent.com/aida/AP1WRLtiic04hPhIuBcwo7JK7YfjKituDzcjDi7l6ILfQPbudkaXb1n8RDYch01ho1Js21Pt-rJC1jl7orgs3ZQE3gsK3tJZIwFShCIG_G7myVFGqhbuPg7owCS3cWkzg2_gWPBGg67MFoipFCn8Ru55DC5B3jnmnyNJNA1uckQO7H9dcT_j7j0I0SL6tlSyY3OY4gbuLt_KyTODMy0kY130eCBhAmTqSHjiPoV2yMbKkaUGFmuOohaCvhKtALM"/>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Good morning!</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">You're in your luteal phase.</p>
+</div>
+</div>
+<!-- Streak Icon -->
+<div class="flex flex-col items-center justify-center bg-surface-lowest rounded-full p-2 soft-shadow min-w-[48px] min-h-[48px]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-primary-container mt-1">12</span>
+</div>
+</header>
+<!-- Central Cycle Wheel -->
+<section class="flex flex-col items-center justify-center">
+<div class="cycle-wheel-container">
+<svg class="cycle-wheel-svg w-full h-full" viewbox="0 0 240 240">
+<circle class="cycle-wheel-bg" cx="120" cy="120" r="100"></circle>
+<circle class="cycle-wheel-progress" cx="120" cy="120" r="100"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase tracking-wider mb-1">Day 22</span>
+<h2 class="font-display-lg text-display-lg text-phase-luteal">Luteal Phase</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 bg-surface-container px-3 py-1 rounded-full">Next period in 6 days</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Today's Insights -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
+<!-- Today Card -->
+<div class="bg-surface-lowest rounded-2xl p-4 soft-shadow flex flex-col justify-between min-h-[160px] md:col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-phase-luteal">auto_awesome</span>
+<h3 class="font-title-md text-title-md text-on-surface">Today for you</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 bg-surface-blush p-3 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary-container">self_improvement</span>
+</div>
+<div>
+<p class="font-button-text text-button-text text-on-surface">Gentle Yoga</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus on restorative poses to ease tension.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-blush p-3 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-phase-luteal/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-phase-luteal">nutrition</span>
+</div>
+<div>
+<p class="font-button-text text-button-text text-on-surface">Magnesium-rich foods</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Try adding spinach or almonds to your meals today.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Hydration Card -->
+<div class="bg-surface-lowest rounded-2xl p-4 soft-shadow flex items-center justify-between min-h-[120px]">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Hydration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5 of 8 glasses</p>
+</div>
+<div class="hydration-ring cursor-pointer hover:scale-95 transition-transform duration-200">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 80 80">
+<circle class="hydration-bg" cx="40" cy="40" r="32"></circle>
+<circle class="hydration-progress" cx="40" cy="40" r="32"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+</div>
+</div>
+<!-- Mood Log -->
+<div class="bg-surface-lowest rounded-2xl p-4 soft-shadow min-h-[120px] flex flex-col justify-center">
+<h3 class="font-title-md text-title-md text-on-surface mb-3">How are you feeling?</h3>
+<div class="flex justify-between items-center w-full">
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-2xl hover:bg-surface-container-highest transition-colors min-h-[48px] min-w-[48px]">😫</button>
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-2xl hover:bg-surface-container-highest transition-colors min-h-[48px] min-w-[48px]">😔</button>
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-2xl hover:bg-surface-container-highest transition-colors min-h-[48px] min-w-[48px]">😐</button>
+<button class="w-12 h-12 rounded-full bg-phase-luteal/30 border-2 border-phase-luteal flex items-center justify-center text-2xl scale-110 min-h-[48px] min-w-[48px]">🙂</button>
+<button class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-2xl hover:bg-surface-container-highest transition-colors min-h-[48px] min-w-[48px]">🤩</button>
+</div>
+</div>
+</section>
+<!-- Log Symptoms Button -->
+<button class="w-full bg-primary-container text-on-primary font-button-text text-button-text py-4 px-6 rounded-full soft-shadow flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all min-h-touch-target-min">
+<span class="material-symbols-outlined">edit_note</span>
+            Log Symptoms
+        </button>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="md:hidden docked full-width bottom-0 rounded-t-xl shadow-[0_-4px_20px_rgba(255,107,157,0.08)] bg-surface dark:bg-inverse-surface shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full w-12 h-12 hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150 min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+<!-- Calendar -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors min-h-[48px] min-w-[48px] p-2 rounded-full">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors min-h-[48px] min-w-[48px] p-2 rounded-full">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+</body></html>

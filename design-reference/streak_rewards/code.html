@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arohi Wellness - Rewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "phase-ovulatory-accent": "#FFD54F",
+                        "outline-variant": "#ddbfc5",
+                        "on-surface-variant": "#574146",
+                        "on-tertiary-fixed": "#3f0018",
+                        "primary-fixed": "#ffd9e1",
+                        "primary": "#ac2a5d",
+                        "surface-container-low": "#fff0f3",
+                        "surface-container": "#ffe8ee",
+                        "phase-ovulatory-main": "#FF4081",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#6f002f",
+                        "error": "#ba1a1a",
+                        "on-surface": "#25181c",
+                        "text-muted": "#8A767C",
+                        "secondary-fixed-dim": "#d9c0c8",
+                        "on-background": "#25181c",
+                        "primary-container": "#ff6b9d",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb1c5",
+                        "surface-tint": "#ac2a5d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#26171d",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f8",
+                        "phase-follicular": "#FF8FB1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffd9df",
+                        "on-error-container": "#93000a",
+                        "phase-menstrual": "#E63970",
+                        "inverse-on-surface": "#ffecf0",
+                        "on-secondary-container": "#715d64",
+                        "secondary-fixed": "#f6dce4",
+                        "background": "#fff8f8",
+                        "secondary-container": "#f3d9e1",
+                        "on-primary-fixed": "#3f001b",
+                        "surface-variant": "#f5dce3",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "surface-dim": "#ecd4da",
+                        "on-primary-fixed-variant": "#8c0a46",
+                        "on-secondary-fixed-variant": "#544248",
+                        "on-primary-container": "#6e0035",
+                        "tertiary": "#b90c55",
+                        "secondary": "#6d5960",
+                        "surface-bright": "#fff8f8",
+                        "surface-blush": "#FFF5F8",
+                        "outline": "#8a7176",
+                        "surface-container-highest": "#f5dce3",
+                        "inverse-surface": "#3b2c31",
+                        "phase-luteal": "#CE93D8",
+                        "tertiary-container": "#ff6c95",
+                        "on-tertiary-fixed-variant": "#8f003f",
+                        "surface-container-high": "#fbe2e8",
+                        "primary-fixed-dim": "#ffb1c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "20px",
+                        "base": "8px",
+                        "stack-gap": "16px",
+                        "touch-target-min": "48px",
+                        "section-margin": "32px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Nunito Sans"],
+                        "button-text": ["Nunito Sans"],
+                        "body-sm": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Nunito Sans"],
+                        "headline-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-caps": ["Nunito Sans"],
+                        "display-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Nunito Sans', sans-serif; }
+        .soft-shadow { box-shadow: 0 4px 20px rgba(255, 107, 157, 0.08); }
+        .progress-bar-fill { transition: width 1s ease-in-out; }
+    </style>
+</head>
+<body class="bg-[#fef9fb] text-on-surface min-h-screen pb-[100px] flex justify-center">
+<div class="w-full max-w-md bg-[#fef9fb] min-h-screen relative shadow-2xl">
+<!-- Top App Bar -->
+<header class="bg-background dark:bg-background docked full-width top-0 bg-transparent flat no shadows flex justify-between items-center px-container-padding py-4 w-full sticky z-10">
+<button aria-label="Back" class="w-touch-target-min h-touch-target-min flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity Active: scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-title-md font-title-md text-primary dark:text-primary-fixed-dim font-bold tracking-tight">Rewards</h1>
+<div class="w-touch-target-min h-touch-target-min"></div> <!-- Placeholder for balance -->
+</header>
+<main class="px-container-padding pt-4 flex flex-col gap-stack-gap relative z-0">
+<!-- Streak Card -->
+<section class="bg-surface-container rounded-[20px] p-6 soft-shadow flex flex-col items-center relative overflow-hidden">
+<div class="w-40 h-40 mb-4 relative z-10">
+
+</div>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-primary text-center mb-1 relative z-10">12 Day Streak</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant text-center mb-6 relative z-10">You're growing beautifully!</p>
+<!-- Progress to Next Level -->
+<div class="w-full bg-white/60 rounded-[12px] p-4 relative z-10 backdrop-blur-sm border border-white/40">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-caps font-label-caps text-primary uppercase">Bud</span>
+<span class="text-label-caps font-label-caps text-text-muted uppercase">Bloom</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full progress-bar-fill w-[60%]"></div>
+</div>
+<p class="text-center text-body-sm font-body-sm text-text-muted mt-2">150 XP to Bloom</p>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-white rounded-[20px] p-4 soft-shadow flex flex-col items-center justify-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center mb-2 text-primary">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mb-1">Total Petals</p>
+<p class="text-headline-lg-mobile font-headline-lg-mobile text-primary">1,250</p>
+</div>
+<div class="bg-white rounded-[20px] p-4 soft-shadow flex flex-col items-center justify-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center mb-2 text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mb-1">Rituals Done</p>
+<p class="text-headline-lg-mobile font-headline-lg-mobile text-primary">42</p>
+</div>
+</section>
+<!-- Badges Section -->
+<section class="mt-4 mb-8">
+<div class="flex justify-between items-end mb-4 px-2">
+<h3 class="text-title-md font-title-md text-on-surface">Your Badges</h3>
+<button class="text-body-sm font-body-sm text-primary font-bold">See All</button>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Earned Badge 1 -->
+<div class="bg-white rounded-[16px] p-3 flex flex-col items-center text-center soft-shadow cursor-pointer hover:bg-surface-blush transition-colors h-touch-target-min">
+<div class="w-14 h-14 rounded-full bg-phase-ovulatory-accent/20 flex items-center justify-center mb-2 text-phase-ovulatory-accent border-2 border-phase-ovulatory-accent/30">
+<span class="material-symbols-outlined text-[28px]" data-icon="lightbulb" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface leading-tight">Early<br/>Bird</span>
+</div>
+<!-- Earned Badge 2 -->
+<div class="bg-white rounded-[16px] p-3 flex flex-col items-center text-center soft-shadow cursor-pointer hover:bg-surface-blush transition-colors h-touch-target-min">
+<div class="w-14 h-14 rounded-full bg-primary-container/20 flex items-center justify-center mb-2 text-primary-container border-2 border-primary-container/30">
+<span class="material-symbols-outlined text-[28px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface leading-tight">Consistency<br/>Queen</span>
+</div>
+<!-- Earned Badge 3 (Sakhi) -->
+<div class="bg-white rounded-[16px] p-3 flex flex-col items-center text-center soft-shadow cursor-pointer hover:bg-surface-blush transition-colors h-touch-target-min">
+<div class="w-14 h-14 rounded-full bg-tertiary-container/20 flex items-center justify-center mb-2 overflow-hidden border-2 border-tertiary-container/30">
+<img alt="Sakhi Mascot Badge" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtiic04hPhIuBcwo7JK7YfjKituDzcjDi7l6ILfQPbudkaXb1n8RDYch01ho1Js21Pt-rJC1jl7orgs3ZQE3gsK3tJZIwFShCIG_G7myVFGqhbuPg7owCS3cWkzg2_gWPBGg67MFoipFCn8Ru55DC5B3jnmnyNJNA1uckQO7H9dcT_j7j0I0SL6tlSyY3OY4gbuLt_KyTODMy0kY130eCBhAmTqSHjiPoV2yMbKkaUGFmuOohaCvhKtALM"/>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface leading-tight">Sakhi's<br/>Friend</span>
+</div>
+<!-- Locked Badge 1 -->
+<div class="bg-surface-dim/30 rounded-[16px] p-3 flex flex-col items-center text-center opacity-70 h-touch-target-min">
+<div class="w-14 h-14 rounded-full bg-surface-variant flex items-center justify-center mb-2 text-text-muted">
+<span class="material-symbols-outlined text-[28px]" data-icon="lock">lock</span>
+</div>
+<span class="text-label-caps font-label-caps text-text-muted leading-tight">Cycle<br/>Master</span>
+</div>
+<!-- Locked Badge 2 -->
+<div class="bg-surface-dim/30 rounded-[16px] p-3 flex flex-col items-center text-center opacity-70 h-touch-target-min">
+<div class="w-14 h-14 rounded-full bg-surface-variant flex items-center justify-center mb-2 text-text-muted">
+<span class="material-symbols-outlined text-[28px]" data-icon="lock">lock</span>
+</div>
+<span class="text-label-caps font-label-caps text-text-muted leading-tight">Moon<br/>Walker</span>
+</div>
+<!-- Empty placeholder for grid -->
+<div class="rounded-[16px] p-3 flex flex-col items-center text-center h-touch-target-min border border-dashed border-outline-variant flex items-center justify-center">
+<span class="text-label-caps font-label-caps text-text-muted leading-tight">More<br/>Soon</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sakhi Cheering Corner Element -->
+<div class="absolute bottom-[90px] right-2 w-24 h-24 z-20 pointer-events-none animate-bounce" style="animation-duration: 3s;">
+<img alt="Cheering Sakhi" class="w-full h-full object-contain drop-shadow-md opacity-90" src="https://lh3.googleusercontent.com/aida/AP1WRLtiic04hPhIuBcwo7JK7YfjKituDzcjDi7l6ILfQPbudkaXb1n8RDYch01ho1Js21Pt-rJC1jl7orgs3ZQE3gsK3tJZIwFShCIG_G7myVFGqhbuPg7owCS3cWkzg2_gWPBGg67MFoipFCn8Ru55DC5B3jnmnyNJNA1uckQO7H9dcT_j7j0I0SL6tlSyY3OY4gbuLt_KyTODMy0kY130eCBhAmTqSHjiPoV2yMbKkaUGFmuOohaCvhKtALM"/>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface docked full-width bottom-0 rounded-t-xl shadow-[0_-4px_20px_rgba(255,107,157,0.08)] bg-surface dark:bg-inverse-surface shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 max-w-md mx-auto right-0">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors w-12 h-12 rounded-full h-touch-target-min w-touch-target-min">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors w-12 h-12 rounded-full h-touch-target-min w-touch-target-min">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+</button>
+<button aria-label="Profile (Active)" class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full w-12 h-12 hover:opacity-80 transition-opacity Active: scale-90 transition-all duration-150 h-touch-target-min w-touch-target-min">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+</button>
+</nav>
+</div>
+<script>
+        // Simple entry animation for progress bar
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBar = document.querySelector('.progress-bar-fill');
+            if (progressBar) {
+                setTimeout(() => {
+                    progressBar.style.width = '60%';
+                }, 300);
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ask Sakhi - Arohi</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#fff0f3",
+                        "tertiary-container": "#ff6c95",
+                        "surface-blush": "#FFF5F8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#26171d",
+                        "secondary-container": "#f3d9e1",
+                        "secondary-fixed-dim": "#d9c0c8",
+                        "inverse-on-surface": "#ffecf0",
+                        "on-tertiary-fixed-variant": "#8f003f",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed-dim": "#ffb1c5",
+                        "surface-tint": "#ac2a5d",
+                        "background": "#fff8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6d5960",
+                        "surface": "#fff8f8",
+                        "on-primary-container": "#6e0035",
+                        "primary": "#ac2a5d",
+                        "outline-variant": "#ddbfc5",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffd9e1",
+                        "phase-menstrual": "#E63970",
+                        "text-muted": "#8A767C",
+                        "surface-dim": "#ecd4da",
+                        "surface-container-high": "#fbe2e8",
+                        "phase-ovulatory-main": "#FF4081",
+                        "phase-follicular": "#FF8FB1",
+                        "on-primary": "#ffffff",
+                        "on-background": "#25181c",
+                        "phase-luteal": "#CE93D8",
+                        "inverse-surface": "#3b2c31",
+                        "inverse-primary": "#ffb1c5",
+                        "on-secondary-container": "#715d64",
+                        "primary-container": "#ff6b9d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#3f0018",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#b90c55",
+                        "on-surface-variant": "#574146",
+                        "outline": "#8a7176",
+                        "phase-ovulatory-accent": "#FFD54F",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#25181c",
+                        "surface-container": "#ffe8ee",
+                        "tertiary-fixed": "#ffd9df",
+                        "surface-container-highest": "#f5dce3",
+                        "on-primary-fixed-variant": "#8c0a46",
+                        "secondary-fixed": "#f6dce4",
+                        "on-secondary-fixed-variant": "#544248",
+                        "surface-variant": "#f5dce3",
+                        "on-primary-fixed": "#3f001b",
+                        "on-tertiary-container": "#6f002f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "container-padding": "20px",
+                        "stack-gap": "16px",
+                        "section-margin": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Nunito Sans"],
+                        "title-md": ["Nunito Sans"],
+                        "display-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-lg": ["Nunito Sans"],
+                        "body-sm": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Nunito Sans"],
+                        "button-text": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for chat area */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f5dce3;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background h-screen flex flex-col font-body-lg text-on-surface antialiased overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-container-padding py-4 w-full bg-background z-10 shrink-0">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min text-primary hover:opacity-80 transition-opacity -ml-4 rounded-full active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover border border-surface-container-high shadow-sm" data-alt="A small, soft, minimalist lotus flower mascot named Sakhi with a friendly expression, rounded organic petals in warm pink and blush colors, modern vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAo7T47VB_HHeGIJ2qJgLoNpXhJiEiOzr4INOFnFAtdmRX60bF4R-f4oYw2oHoAoQBBkQJyU3Fn9LyUZf6_ZseNngjJo_9UFnL8F-WaBwT-jCUEBW43DCmF8-Lsj7wXhiBbz3mIF4UTHHWBcvaqjsK0rSJJ2bq4X8UafIRRd9ZmJ3cGgzXsLMPpEC21ANdKxwzkZs4bbwtYqo7NVuvJZ5bFNuPwuvk-il4iwOoRWMIN3uZdbyEwM3L84HqgdigOrfgz1Cecp9TJLU"/>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-primary">Ask Sakhi</h1>
+</div>
+<button class="flex items-center gap-1 h-touch-target-min px-3 rounded-full hover:bg-surface-container-low transition-colors text-primary -mr-4">
+<span class="text-label-caps font-label-caps">EN</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</header>
+<!-- Safety Badge -->
+<div class="px-container-padding pb-4 shrink-0">
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-center gap-2 shadow-[0_2px_10px_rgba(255,107,157,0.04)] border border-surface-variant/50">
+<span class="material-symbols-outlined text-text-muted text-[18px]">lock</span>
+<span class="text-label-caps font-label-caps text-text-muted text-center">Anonymous — your questions are never stored</span>
+</div>
+</div>
+<!-- Chat Canvas -->
+<main class="flex-1 overflow-y-auto px-container-padding pb-32 flex flex-col gap-6" id="chat-container">
+<!-- Sakhi Welcome Message -->
+<div class="flex gap-3 max-w-[85%]">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-1 shadow-sm" data-alt="A small, soft, minimalist lotus flower mascot named Sakhi with a friendly expression, rounded organic petals in warm pink and blush colors, modern vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNd_DZVBoWkXU6w1h_RGaQ5AHw1nf_3haVXoUJuPWxXqFcRl9V9jxpIvbSVWREFWIh_YYwAq617ybiGBk_gt_D0tg5YysyDrmjbArAeHib93faKPU3fGS3ccVg-iivKLtLSQGQPD4MNQAaAXoEb5Nby19Cf4Lz_KOLvJs0IwuDAEykbV3g27-fjGWh_D_Znf8nrqS3nCrXZ8eOzys9ngRtywjWSiJNAviIOo628WShrAGBD3vG6eIx11FBw3T-rWkKam2gGRRKdcw"/>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-highest rounded-[20px] rounded-tl-[4px] p-4 text-body-lg text-on-surface shadow-[0_4px_12px_rgba(255,107,157,0.05)]">
+                    Hi there! I'm Sakhi. I'm here to offer a safe space for any questions you have about your cycle, wellness, or body. How are you feeling today?
+                </div>
+<div class="flex items-center gap-2">
+<button aria-label="Listen to message" class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-low text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="bg-primary-container rounded-[20px] rounded-tr-[4px] p-4 text-body-lg text-on-primary-container shadow-[0_4px_12px_rgba(255,107,157,0.08)]">
+                I've been feeling really fatigued lately, especially during the second half of my cycle. Is that normal?
+            </div>
+</div>
+<!-- Sakhi Response -->
+<div class="flex gap-3 max-w-[85%]">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-1 shadow-sm" data-alt="A small, soft, minimalist lotus flower mascot named Sakhi with a friendly expression, rounded organic petals in warm pink and blush colors, modern vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb-4ZQx_npwNrmQ_Ik_fDi0vbd2DexEblPjy_DKxUPzoTRk7FM-nND6vBzzlSaXUeulFFMJPbTozQVa75wn_SsXuvTb0uZzu7HGlydtEVkxC4bHVU6Nr-oBCSuiO9cT07yr_zPaJ3HELiVkizN1cY79Vbtky0L3x8Fx-qz1lcbnWtoafkfOX3audvbF2Ndz9uyNrr1bXiM0YOWnxrymmsjgqnroQoggswAdNwLtuw8-xh4MMdT4nDfzrdLOLQW-bpP4uH0AmJHxzQ"/>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-highest rounded-[20px] rounded-tl-[4px] p-4 text-body-lg text-on-surface shadow-[0_4px_12px_rgba(255,107,157,0.05)] leading-relaxed">
+                    It's very common to feel more fatigued during your luteal phase (the second half of your cycle). This is often due to rising progesterone levels, which can have a natural sedative effect. Making sure you're resting, staying hydrated, and eating iron-rich foods can gently support your energy.
+                </div>
+<!-- Citations & Actions -->
+<div class="flex items-center gap-2 flex-wrap mt-1">
+<span class="bg-surface-container-low text-text-muted text-label-caps font-label-caps px-3 py-1.5 rounded-full border border-surface-variant/50 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Medical Review
+                    </span>
+<span class="bg-surface-container-low text-text-muted text-label-caps font-label-caps px-3 py-1.5 rounded-full border border-surface-variant/50 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">book</span> Arohi Guide
+                    </span>
+<button aria-label="Listen to message" class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-low text-primary hover:bg-surface-container transition-colors ml-auto">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Input Area (Fixed to bottom, replacing BottomNavBar since this is task-focused) -->
+<div class="fixed bottom-0 w-full bg-surface/90 backdrop-blur-md pb-8 pt-4 px-container-padding shadow-[0_-8px_24px_rgba(255,107,157,0.06)] z-20">
+<div class="flex items-end gap-3 bg-surface-container-lowest rounded-[24px] p-2 shadow-sm border border-surface-variant/30 focus-within:border-primary-fixed-dim focus-within:shadow-[0_0_0_2px_rgba(255,177,197,0.3)] transition-all">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min text-text-muted hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none py-3 px-1 text-body-lg text-on-surface placeholder:text-text-muted/60 min-h-[48px] max-h-[120px]" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" placeholder="Ask Sakhi anything..." rows="1"></textarea>
+<button class="flex items-center justify-center w-12 h-12 bg-primary text-on-primary rounded-full hover:bg-surface-tint active:scale-95 transition-all shrink-0 shadow-md">
+<span class="material-symbols-outlined icon-fill">send</span>
+</button>
+</div>
+</div>
+</body></html>

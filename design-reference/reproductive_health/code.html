@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arohi Wellness - Reproductive Health</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "phase-ovulatory-accent": "#FFD54F",
+                        "outline-variant": "#ddbfc5",
+                        "on-surface-variant": "#574146",
+                        "on-tertiary-fixed": "#3f0018",
+                        "primary-fixed": "#ffd9e1",
+                        "phase-ovulatory-main": "#FF4081",
+                        "on-primary": "#ffffff",
+                        "primary": "#ac2a5d",
+                        "surface-container-low": "#fff0f3",
+                        "surface-container": "#ffe8ee",
+                        "on-tertiary-container": "#6f002f",
+                        "error": "#ba1a1a",
+                        "text-muted": "#8A767C",
+                        "secondary-fixed-dim": "#d9c0c8",
+                        "on-background": "#25181c",
+                        "on-surface": "#25181c",
+                        "primary-container": "#ff6b9d",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#26171d",
+                        "inverse-primary": "#ffb1c5",
+                        "surface-tint": "#ac2a5d",
+                        "phase-follicular": "#FF8FB1",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f8",
+                        "tertiary-fixed": "#ffd9df",
+                        "on-error-container": "#93000a",
+                        "phase-menstrual": "#E63970",
+                        "inverse-on-surface": "#ffecf0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#f6dce4",
+                        "background": "#fff8f8",
+                        "on-secondary-container": "#715d64",
+                        "secondary-container": "#f3d9e1",
+                        "on-primary-fixed": "#3f001b",
+                        "tertiary": "#b90c55",
+                        "secondary": "#6d5960",
+                        "surface-bright": "#fff8f8",
+                        "surface-variant": "#f5dce3",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "surface-dim": "#ecd4da",
+                        "on-primary-fixed-variant": "#8c0a46",
+                        "on-secondary-fixed-variant": "#544248",
+                        "on-primary-container": "#6e0035",
+                        "surface-blush": "#FFF5F8",
+                        "outline": "#8a7176",
+                        "surface-container-highest": "#f5dce3",
+                        "inverse-surface": "#3b2c31",
+                        "phase-luteal": "#CE93D8",
+                        "surface-container-high": "#fbe2e8",
+                        "primary-fixed-dim": "#ffb1c5",
+                        "tertiary-container": "#ff6c95",
+                        "on-tertiary-fixed-variant": "#8f003f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "20px"
+                    },
+                    "spacing": {
+                        "section-margin": "32px",
+                        "touch-target-min": "48px",
+                        "stack-gap": "16px",
+                        "container-padding": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Nunito Sans", "sans-serif"],
+                        "headline-lg": ["Nunito Sans", "sans-serif"],
+                        "body-lg": ["Nunito Sans", "sans-serif"],
+                        "label-caps": ["Nunito Sans", "sans-serif"],
+                        "display-lg": ["Nunito Sans", "sans-serif"],
+                        "title-md": ["Nunito Sans", "sans-serif"],
+                        "button-text": ["Nunito Sans", "sans-serif"],
+                        "body-sm": ["Nunito Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "blush": "0 12px 24px -8px rgba(255, 107, 157, 0.15)",
+                        "blush-hover": "0 16px 32px -8px rgba(255, 107, 157, 0.25)",
+                        "inner-blush": "inset 0 2px 4px 0 rgba(255, 107, 157, 0.05)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scroll area */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Subtle pulse for current day in calendar */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(255, 107, 157, 0); }
+        }
+        .pulse-day {
+            animation: subtle-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface-blush text-on-surface font-body-lg min-h-screen pb-24 selection:bg-primary-container selection:text-on-primary-container antialiased">
+<!-- Top Navigation (Mobile & Desktop compatible, though primarily mobile layout) -->
+<header class="bg-background dark:bg-background docked full-width top-0 bg-transparent flex justify-between items-center px-container-padding py-4 w-full sticky z-40 transition-colors duration-300" id="main-header">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full text-primary dark:text-primary-fixed-dim hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<img alt="Sakhi Mascot" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLtiic04hPhIuBcwo7JK7YfjKituDzcjDi7l6ILfQPbudkaXb1n8RDYch01ho1Js21Pt-rJC1jl7orgs3ZQE3gsK3tJZIwFShCIG_G7myVFGqhbuPg7owCS3cWkzg2_gWPBGg67MFoipFCn8Ru55DC5B3jnmnyNJNA1uckQO7H9dcT_j7j0I0SL6tlSyY3OY4gbuLt_KyTODMy0kY130eCBhAmTqSHjiPoV2yMbKkaUGFmuOohaCvhKtALM"/>
+<h1 class="text-title-md font-title-md text-primary dark:text-primary-fixed-dim tracking-tight">Reproductive Health</h1>
+</div>
+<button class="text-text-muted hover:text-primary transition-colors text-label-caps font-label-caps">
+            Settings
+        </button>
+</header>
+<main class="px-container-padding max-w-md mx-auto md:max-w-2xl md:grid md:grid-cols-2 md:gap-8 xl:max-w-4xl pt-2">
+<div class="md:col-span-2 text-center mb-8 hidden md:block">
+<h2 class="text-display-lg font-display-lg text-primary mb-2">Hello, Sarah.</h2>
+<p class="text-body-lg font-body-lg text-text-muted">Here is your reproductive health overview today.</p>
+</div>
+<div class="space-y-stack-gap md:col-span-1">
+<!-- Intention Mode Selector -->
+<section class="bg-surface-container-lowest rounded-card p-6 shadow-blush relative overflow-hidden group">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary-container rounded-full opacity-50 blur-3xl group-hover:bg-primary-container transition-colors duration-700"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-title-md font-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">track_changes</span>
+                            Intention Mode
+                        </h3>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-label-caps font-label-caps flex items-center gap-1">
+                            Current
+                        </span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 px-4 rounded-xl flex items-center justify-between hover:bg-primary-container/90 transition-colors shadow-sm active:scale-[0.98] h-touch-target-min">
+<div class="flex flex-col items-start">
+<span class="text-button-text font-button-text">Just Tracking</span>
+<span class="text-body-sm font-body-sm opacity-80">Monitoring my cycle health</span>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<p class="text-body-sm font-body-sm text-text-muted mt-3 text-center">
+                        Tap to switch to 'Avoiding' or 'TTC'.
+                    </p>
+</div>
+</section>
+<!-- Fertile Window Calendar Card -->
+<section class="bg-surface-container-lowest rounded-card p-6 shadow-blush">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-title-md font-title-md text-on-surface flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-phase-ovulatory-main" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+                            Fertile Window
+                        </h3>
+<p class="text-body-sm font-body-sm text-text-muted">High chance of conception</p>
+</div>
+<div class="bg-phase-ovulatory-accent/20 text-phase-ovulatory-main px-3 py-1.5 rounded-lg text-label-caps font-label-caps">
+                        Oct 14 - 19
+                    </div>
+</div>
+<!-- Mini Calendar -->
+<div class="bg-surface-blush rounded-xl p-4 border border-surface-container-high/50">
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-label-caps font-label-caps text-text-muted">S</span>
+<span class="text-label-caps font-label-caps text-text-muted">M</span>
+<span class="text-label-caps font-label-caps text-text-muted">T</span>
+<span class="text-label-caps font-label-caps text-text-muted">W</span>
+<span class="text-label-caps font-label-caps text-text-muted">T</span>
+<span class="text-label-caps font-label-caps text-text-muted">F</span>
+<span class="text-label-caps font-label-caps text-text-muted">S</span>
+</div>
+<div class="grid grid-cols-7 gap-y-2 gap-x-1 text-center text-body-sm font-body-sm">
+<!-- Empty slots for alignment -->
+<span class="text-surface-dim"></span>
+<span class="text-surface-dim"></span>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">1</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">2</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">3</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">4</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">5</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">6</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">7</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">8</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">9</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">10</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">11</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">12</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors">13</div>
+<!-- Fertile Window -->
+<div class="relative">
+<div class="absolute inset-0 bg-phase-ovulatory-accent/20 rounded-l-full"></div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-on-surface font-bold relative z-10">14</div>
+</div>
+<div class="bg-phase-ovulatory-accent/20">
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-on-surface font-bold">15</div>
+</div>
+<div class="bg-phase-ovulatory-accent/20">
+<div class="flex items-center justify-center h-8 w-8 bg-phase-ovulatory-main text-white rounded-full mx-auto font-bold shadow-sm pulse-day z-10 relative cursor-pointer" title="Peak Fertility Day">16</div>
+</div>
+<div class="bg-phase-ovulatory-accent/20">
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-on-surface font-bold">17</div>
+</div>
+<div class="bg-phase-ovulatory-accent/20">
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-on-surface font-bold">18</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 bg-phase-ovulatory-accent/20 rounded-r-full"></div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-on-surface font-bold relative z-10">19</div>
+</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors mt-1">20</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors mt-1">21</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors mt-1">22</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors mt-1">23</div>
+<div class="flex items-center justify-center h-8 w-8 rounded-full mx-auto text-text-muted hover:bg-surface-container cursor-pointer transition-colors mt-1">24</div>
+</div>
+</div>
+</section>
+</div>
+<div class="space-y-stack-gap md:col-span-1 mt-stack-gap md:mt-0">
+<!-- Contraception Reminder -->
+<section class="bg-surface-container-lowest rounded-card p-6 shadow-blush border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medication</span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">Daily Pill</h3>
+<p class="text-body-sm font-body-sm text-text-muted">Combination Pill</p>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="flex items-center cursor-pointer h-touch-target-min">
+<div class="relative">
+<input checked="" class="sr-only" type="checkbox"/>
+<div class="block bg-primary-container w-14 h-8 rounded-full transition-colors duration-300"></div>
+<div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform duration-300 transform translate-x-6 shadow-sm"></div>
+</div>
+<style>
+                            input:not(:checked) ~ .block { background-color: #f5dce3; }
+                            input:not(:checked) ~ .dot { transform: translateX(0); }
+                        </style>
+</label>
+</div>
+<div class="flex items-center justify-between bg-surface-blush p-4 rounded-xl">
+<span class="text-body-lg font-body-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">alarm</span>
+                        Reminder Time
+                    </span>
+<button class="text-title-md font-title-md text-primary font-bold hover:bg-primary/5 px-3 py-1 rounded-lg transition-colors h-touch-target-min flex items-center">
+                        9:00 AM
+                    </button>
+</div>
+</section>
+<!-- Educational Resources (Horizontal Scroll) -->
+<section class="mt-8">
+<h3 class="text-title-md font-title-md text-on-surface mb-4 px-2">Learn &amp; Explore</h3>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 pb-6 px-2 -mx-2 snap-x snap-mandatory">
+<!-- Card 1 -->
+<a class="min-w-[200px] flex-shrink-0 bg-surface-container-lowest rounded-card p-5 shadow-blush hover:shadow-blush-hover transition-all duration-300 snap-center group border border-transparent hover:border-primary/10" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h4 class="text-button-text font-button-text text-on-surface mb-1">Contraception Options</h4>
+<p class="text-body-sm font-body-sm text-text-muted line-clamp-2">Find what works best for your body.</p>
+</a>
+<!-- Card 2 -->
+<a class="min-w-[200px] flex-shrink-0 bg-surface-container-lowest rounded-card p-5 shadow-blush hover:shadow-blush-hover transition-all duration-300 snap-center group border border-transparent hover:border-primary/10" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">vital_signs</span>
+</div>
+<h4 class="text-button-text font-button-text text-on-surface mb-1">Understanding PCOS</h4>
+<p class="text-body-sm font-body-sm text-text-muted line-clamp-2">Management and lifestyle tips.</p>
+</a>
+<!-- Card 3 -->
+<a class="min-w-[200px] flex-shrink-0 bg-surface-container-lowest rounded-card p-5 shadow-blush hover:shadow-blush-hover transition-all duration-300 snap-center group border border-transparent hover:border-primary/10" href="#">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h4 class="text-button-text font-button-text text-on-surface mb-1">Sexual Health</h4>
+<p class="text-body-sm font-body-sm text-text-muted line-clamp-2">Wellness, pleasure, and communication.</p>
+</a>
+<!-- Spacer for scroll padding -->
+<div class="min-w-[20px] flex-shrink-0"></div>
+</div>
+</section>
+<!-- Supportive Message from Sakhi -->
+<div class="bg-surface-container rounded-2xl p-4 flex items-center gap-4 border border-surface-container-highest">
+<img alt="Sakhi Mascot" class="w-12 h-12 object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida/AP1WRLtiic04hPhIuBcwo7JK7YfjKituDzcjDi7l6ILfQPbudkaXb1n8RDYch01ho1Js21Pt-rJC1jl7orgs3ZQE3gsK3tJZIwFShCIG_G7myVFGqhbuPg7owCS3cWkzg2_gWPBGg67MFoipFCn8Ru55DC5B3jnmnyNJNA1uckQO7H9dcT_j7j0I0SL6tlSyY3OY4gbuLt_KyTODMy0kY130eCBhAmTqSHjiPoV2yMbKkaUGFmuOohaCvhKtALM"/>
+<p class="text-body-sm font-body-sm text-secondary italic">"Your cycle is unique. Taking time to understand it is a beautiful act of self-care."</p>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only as per guidelines) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 shadow-[0_-4px_20px_rgba(255,107,157,0.08)] bg-surface dark:bg-inverse-surface docked rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors rounded-xl p-2 w-16 h-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-[10px] font-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full w-12 h-12 scale-90 transition-all duration-150 shadow-inner-blush relative -top-4" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors rounded-xl p-2 w-16 h-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-[10px] font-label-caps">Profile</span>
+</a>
+</nav>
+<!-- Header Scroll Script for subtle shadow effect -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-sm', 'bg-surface-blush/90', 'backdrop-blur-md');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('shadow-sm', 'bg-surface-blush/90', 'backdrop-blur-md');
+                    header.classList.add('bg-transparent');
+                }
+            });
+        });
+    </script>
+</body></html>
