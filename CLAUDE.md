@@ -43,6 +43,15 @@ Check for a `Makefile`, `package.json`, or `pyproject.toml` at the relevant root
 - Auth: every endpoint requires Supabase JWT verification except `/health`. Uses `supabase-py`.
 - LLM access is centralized: `services/llm_client.py` is the **only** module allowed to call an LLM. Primary model is Gemini 2.5 Flash, with Groq as fallback. Any feature needing LLM calls goes through this client rather than calling a provider SDK directly — this keeps provider swaps and fallback logic in one place.
 
+## Database invariants
+- A trigger on `auth.users` creates a `public.profiles` and `public.gamification` row (with defaults) for every user at signup. All backend code MUST assume these rows already exist: use `UPDATE` or upsert, never a plain `INSERT` that assumes the row is absent.
+- Onboarding UPDATEs the existing profile with the user's cycle data — it does not INSERT a new profile.
+- RAG retrieval MUST use cosine distance (the `<=>` operator) to match the HNSW `vector_cosine_ops` index.
+- Every user table cascades from `auth.users`, so account deletion = delete the auth user and let cascades handle the rest.
+
 ## Conventions
 - No premature abstraction: prefer duplication over a shared helper until a third use case actually appears.
 - Keep changes readable over clever, given the compressed timeline and two-person team.
+
+### After Each Prompt
+- Tell me what steps to do manually.

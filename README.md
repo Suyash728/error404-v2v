@@ -1,4 +1,4 @@
-### Arohi
+### Project Title: Arohi (Sanskrit: "ascending / rising / a progressive musical tune")
 
 ### The Idea
 Arohi is a women's wellness PWA centered on cycle tracking and holistic health insight. It pairs the user with an in-app companion persona, "Sakhi", who surfaces phase-aware guidance, predictions, and gentle nudges instead of raw data dumps.
