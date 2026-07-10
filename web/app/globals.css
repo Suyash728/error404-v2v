@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Material Symbols Outlined — the icon font every design-reference mockup
+   uses (e.g. home_dashboard/code.html's bottom nav: <span
+   class="material-symbols-outlined">home</span>). This is Google's own
+   recommended base rule for the variable font, not a guess — the FILL axis
+   (0 = outlined/inactive, 1 = filled/active) is toggled per-element via an
+   inline style override, matching how the mockups themselves do it, rather
+   than a second CSS class. Font is loaded via a <link> in app/layout.tsx. */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
 :root {
   /* Brand pink base (design-reference/design.md) */
   --color-primary: #ff6b9d;

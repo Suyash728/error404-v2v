@@ -5,18 +5,24 @@ import { usePathname } from "next/navigation";
 
 // Sourced from design-reference: every mockup with a bottom nav
 // (home_dashboard, insights_dashboard, reproductive_health, profile_privacy,
-// streak_rewards) shows this same 3-tab set (icons: home, calendar_today,
-// person) — not a 7-tab set. No Material Symbols font wired up yet, so
-// icons are emoji placeholders for now, consistent with the rest of the
-// dashboard conversion.
+// streak_rewards) shows this same 3-tab set with these EXACT Material
+// Symbols Outlined ligature names — confirmed identical across all of them,
+// not a guessed equivalent:
+//   home_dashboard/code.html:335      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+//   reproductive_health/code.html:334 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+//   profile_privacy/code.html:303     <span class="material-symbols-outlined ..." style="font-variation-settings: 'FILL' 1;">person</span>
+// The active tab's icon uses FILL 1 (solid), inactive tabs use FILL 0
+// (outlined) — that fill toggle is the mockups' only active/inactive icon
+// treatment, so it's reproduced exactly rather than approximated with a
+// color-only or scale-only state change.
 //
 // The "Profile" tab points at /settings, not /profile: design-reference's
 // own profile_privacy/code.html — the mockup this tab represents — is
 // titled "Arohi - Settings", and that's the page that actually exists now.
 const TABS = [
-  { href: "/dashboard", label: "Home", icon: "🏠" },
-  { href: "/calendar", label: "Calendar", icon: "📅" },
-  { href: "/settings", label: "Profile", icon: "👤" },
+  { href: "/dashboard", label: "Home", icon: "home" },
+  { href: "/calendar", label: "Calendar", icon: "calendar_today" },
+  { href: "/settings", label: "Profile", icon: "person" },
 ] as const;
 
 export function BottomNav() {
@@ -39,7 +45,11 @@ export function BottomNav() {
               isActive ? "bg-brand-blush text-brand-deep" : "text-foreground/70 hover:bg-brand-blush/50"
             }`}
           >
-            <span aria-hidden="true" className="text-xl leading-none">
+            <span
+              aria-hidden="true"
+              className="material-symbols-outlined text-2xl leading-none"
+              style={{ fontVariationSettings: `'FILL' ${isActive ? 1 : 0}` }}
+            >
               {tab.icon}
             </span>
             {tab.label}
