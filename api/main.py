@@ -44,7 +44,10 @@ app.include_router(risk.router, dependencies=authenticated)
 app.include_router(recommendations.router, dependencies=authenticated)
 app.include_router(qa.router, dependencies=authenticated)
 app.include_router(tts.router, dependencies=authenticated)
-app.include_router(calendar.router, dependencies=authenticated)
+# No router-level auth dependency: /calendar/oauth/callback is hit directly
+# by Google's redirect, which can't carry a Supabase JWT. Its other routes
+# (oauth/start, sync) declare Depends(get_current_user) individually.
+app.include_router(calendar.router)
 app.include_router(reproductive.router, dependencies=authenticated)
 app.include_router(gamification.router, dependencies=authenticated)
 app.include_router(fit.router, dependencies=authenticated)

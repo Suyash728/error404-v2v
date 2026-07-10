@@ -9,10 +9,14 @@ import { usePathname } from "next/navigation";
 // person) — not a 7-tab set. No Material Symbols font wired up yet, so
 // icons are emoji placeholders for now, consistent with the rest of the
 // dashboard conversion.
+//
+// The "Profile" tab points at /settings, not /profile: design-reference's
+// own profile_privacy/code.html — the mockup this tab represents — is
+// titled "Arohi - Settings", and that's the page that actually exists now.
 const TABS = [
   { href: "/dashboard", label: "Home", icon: "🏠" },
   { href: "/calendar", label: "Calendar", icon: "📅" },
-  { href: "/profile", label: "Profile", icon: "👤" },
+  { href: "/settings", label: "Profile", icon: "👤" },
 ] as const;
 
 export function BottomNav() {

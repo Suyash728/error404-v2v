@@ -1,3 +1,4 @@
+import logging
 import uuid
 from datetime import date
 
@@ -7,10 +8,13 @@ from pydantic import BaseModel
 from core.security import get_current_user
 from models.schemas import Cycle, Prediction
 from services import cycles as cycles_service
+from services import gcal
 from services import prediction as prediction_service
 from services import profiles as profiles_service
 
 router = APIRouter(prefix="/cycles", tags=["cycles"])
+
+logger = logging.getLogger("arohi.gcal")
 
 
 class CycleStartRequest(BaseModel):
@@ -26,7 +30,21 @@ def start_cycle(
     payload: CycleStartRequest,
     current_user: dict = Depends(get_current_user),
 ) -> Cycle:
-    return cycles_service.start_cycle(current_user["sub"], payload.start_date)
+    user_id = current_user["sub"]
+    cycle = cycles_service.start_cycle(user_id, payload.start_date)
+
+    # Best-effort: starting a cycle changes what predict() returns going
+    # forward, so re-sync the predicted-period/fertile-window events. Never
+    # blocks the cycle actually starting — most users won't have connected
+    # Google Calendar at all, which is the expected common case here.
+    try:
+        gcal.sync_predictions(user_id)
+    except gcal.GoogleCalendarNotConnected:
+        pass
+    except Exception:
+        logger.exception("post-cycle-start gcal sync failed for user %s", user_id)
+
+    return cycle
 
 
 @router.get("/prediction", response_model=Prediction)

@@ -4,6 +4,10 @@ python-dotenv
 supabase
 httpx
 google-generativeai
+google-api-python-client
+google-auth
+google-auth-httplib2
+requests
 groq
 pydantic
 python-jose[cryptography]
