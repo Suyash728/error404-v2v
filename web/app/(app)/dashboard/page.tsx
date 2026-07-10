@@ -24,12 +24,12 @@ const PHASE_MESSAGE: Record<CyclePhase, string> = {
 };
 
 // services/prediction.py doesn't exist on the API yet, so there's no real
-// GET /cycles/current to call. Falls back to placeholder data so this page
-// renders today — swap this for a real api.get() call once that endpoint
-// ships, no other change needed here.
+// GET /cycles/prediction to call. Falls back to placeholder data so this
+// page renders today — swap this for a real api.get() call once that
+// endpoint ships, no other change needed here.
 async function getPrediction(): Promise<CyclePrediction> {
   try {
-    return await api.get<CyclePrediction>("/cycles/current");
+    return await api.get<CyclePrediction>("/cycles/prediction");
   } catch {
     return { phase: "luteal", cycle_day: 22, cycle_length: 28, next_period_in_days: 6 };
   }

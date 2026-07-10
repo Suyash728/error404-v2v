@@ -50,6 +50,8 @@ Phase and brand colors have three tiers — never use them interchangeably:
 - `phase-X-text` / `phase-ovulatory-accent-text`: the ONLY tokens allowed when a phase color is used AS text color on `--background`/`--surface`.
 - `--on-accent` (#000) / `--on-deep` (#FFFFFF): the ONLY tokens allowed as text color on top of a solid `--accent`/`--brand-deep` fill (e.g. primary buttons). Never assume `--foreground` or white is safe on a colored fill without checking TOKENS.md's contrast table.
 
+The decorative-fill tier is not a blanket exemption. Any element that conveys meaningful state through contrast against its immediate background — progress indicators, wheel/ring arcs, chart data-ink, focus outlines — must independently clear WCAG 1.4.11 (3:1 non-text contrast) against that specific background. Check per-instance; if the raw accent fails, use the `*-text` tier or a custom-verified value, as CycleWheel's progress arc does. Purely ornamental fills (icon badges, chip backgrounds, gradient glows with no text/data on top) remain exempt.
+
 Every screen-conversion prompt must follow this without being reminded.
 
 ## Database invariants

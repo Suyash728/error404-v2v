@@ -1,0 +1,47 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+// Sourced from design-reference: every mockup with a bottom nav
+// (home_dashboard, insights_dashboard, reproductive_health, profile_privacy,
+// streak_rewards) shows this same 3-tab set (icons: home, calendar_today,
+// person) — not a 7-tab set. No Material Symbols font wired up yet, so
+// icons are emoji placeholders for now, consistent with the rest of the
+// dashboard conversion.
+const TABS = [
+  { href: "/dashboard", label: "Home", icon: "🏠" },
+  { href: "/calendar", label: "Calendar", icon: "📅" },
+  { href: "/profile", label: "Profile", icon: "👤" },
+] as const;
+
+export function BottomNav() {
+  const pathname = usePathname();
+
+  return (
+    <nav
+      aria-label="Primary"
+      className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-around border-t border-border bg-surface px-6 pb-6 pt-2 shadow-sm"
+    >
+      {TABS.map((tab) => {
+        const isActive = pathname === tab.href || pathname?.startsWith(`${tab.href}/`);
+
+        return (
+          <Link
+            key={tab.href}
+            href={tab.href}
+            aria-current={isActive ? "page" : undefined}
+            className={`flex min-h-[48px] min-w-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-1 text-xs font-semibold transition-colors ${
+              isActive ? "bg-brand-blush text-brand-deep" : "text-foreground/70 hover:bg-brand-blush/50"
+            }`}
+          >
+            <span aria-hidden="true" className="text-xl leading-none">
+              {tab.icon}
+            </span>
+            {tab.label}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+}
