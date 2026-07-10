@@ -1,0 +1,111 @@
+{
+  "menstrual": {
+    "greeting": [
+      { "text": "Hi love 🌸 Resting today? Your body's doing quiet, important work." },
+      { "text": "Hello 💗 However today feels, Sakhi's right here with you." }
+    ],
+    "log_prompt": [
+      { "text": "Got 10 seconds? A quick check-in helps Sakhi look out for you. 🌸" },
+      { "text": "No pressure — whenever you're ready, your check-in is here. 💗" }
+    ],
+    "missed_1": [
+      { "text": "No worries about yesterday, love — today's a fresh moment. 🌸", "soft": true },
+      { "text": "Missed a day? That's okay. Whenever you're ready, we're here. 💗", "soft": true }
+    ],
+    "missed_3plus": [
+      { "text": "It's been a few days — completely okay. Come back whenever feels right. 🌸", "soft": true },
+      { "text": "No pressure at all, love. Sakhi's here whenever you're ready to check back in. 💗", "soft": true }
+    ],
+    "streak_milestone": [
+      { "text": "🌸 Look at your streak — consistency like that deserves real credit." },
+      { "text": "Even through a tender week, you're showing up. That means a lot. 💗" },
+      { "text": "🌸 A milestone streak during your period? That's real strength.", "streak_states": ["milestone"] }
+    ],
+    "phase_transition": [
+      { "text": "Welcome to your menstrual phase — a good time to rest and be gentle with yourself. 🌸" },
+      { "text": "Your period's here. Sakhi's got extra-soft support for you this week. 💗" }
+    ]
+  },
+  "follicular": {
+    "greeting": [
+      { "text": "Good morning ☀️ Energy's on the rise — what's calling to you today?" },
+      { "text": "Hi there 🌱 Fresh-start energy today. Sakhi's cheering you on." }
+    ],
+    "log_prompt": [
+      { "text": "Quick check-in? It only takes a moment and helps build your picture. 🌱" },
+      { "text": "Got a sec to log today? Future-you will thank present-you. ☀️" }
+    ],
+    "missed_1": [
+      { "text": "You missed yesterday's check-in — pop back in when you can, streak's still warm! 🌱" },
+      { "text": "One day skipped isn't a big deal — let's pick it back up today. ☀️" }
+    ],
+    "missed_3plus": [
+      { "text": "It's been a few days since your last check-in — let's ease back in together. 🌱" },
+      { "text": "Your streak paused, but it's easy to restart. One check-in gets you going again. ☀️" }
+    ],
+    "streak_milestone": [
+      { "text": "🌱 Your streak is growing right along with this phase — amazing work!" },
+      { "text": "Consistency like yours is how real change happens. Keep going! ☀️" },
+      { "text": "🌱 A big streak milestone — your consistency is paying off.", "streak_states": ["milestone"] }
+    ],
+    "phase_transition": [
+      { "text": "You've moved into your follicular phase — energy's building! ☀️" },
+      { "text": "New phase, new energy 🌱 Follicular days are great for fresh starts." }
+    ]
+  },
+  "ovulatory": {
+    "greeting": [
+      { "text": "Hey you ✨ You're at your peak energy this week!" },
+      { "text": "Hi love 🌟 Feeling capable today? You've got real momentum." }
+    ],
+    "log_prompt": [
+      { "text": "Log today's check-in — you're on a roll! ✨" },
+      { "text": "A quick check-in now keeps your streak (and Sakhi) happy. 🌟" }
+    ],
+    "missed_1": [
+      { "text": "Yesterday slipped by — no big deal, let's log today and keep the momentum. ✨" },
+      { "text": "Missed a day, but your streak's still warm — jump back in! 🌟" }
+    ],
+    "missed_3plus": [
+      { "text": "A few days have passed — no judgment, just an easy way back in today. ✨" },
+      { "text": "Life happens! Let's pick your check-ins back up whenever you're ready. 🌟" }
+    ],
+    "streak_milestone": [
+      { "text": "✨ Your streak is as strong as you're feeling this week — incredible!" },
+      { "text": "🌟 Look at that streak! You're building something real." },
+      { "text": "✨ Milestone reached, right at your peak week — perfect timing.", "streak_states": ["milestone"] }
+    ],
+    "phase_transition": [
+      { "text": "You've entered your ovulatory phase — often your highest-energy week! ✨" },
+      { "text": "Ovulation phase has begun 🌟 A great time to lean into what excites you." },
+      { "text": "Ovulation phase has begun — a key window if you're trying to conceive. 🌟", "intention_modes": ["ttc"] }
+    ]
+  },
+  "luteal": {
+    "greeting": [
+      { "text": "Hello 🌙 Slowing down is allowed. Sakhi's got you today." },
+      { "text": "Hi there 💜 However you're feeling, it's valid. Let's ease into today." }
+    ],
+    "log_prompt": [
+      { "text": "Whenever you're ready, today's check-in is waiting. No rush. 🌙" },
+      { "text": "A gentle reminder: your check-in helps Sakhi notice patterns for you. 💜" }
+    ],
+    "missed_1": [
+      { "text": "You missed yesterday — totally okay. A quick log today gets you back on track. 🌙" },
+      { "text": "One skipped day won't undo your progress — let's continue today. 💜" }
+    ],
+    "missed_3plus": [
+      { "text": "It's been a few quiet days — that's alright. A small step today is enough. 🌙" },
+      { "text": "No need to catch up on everything — just today's check-in is a great start. 💜" }
+    ],
+    "streak_milestone": [
+      { "text": "💜 Even while winding down, your streak keeps going. Well done." },
+      { "text": "🌙 That's real dedication — proud of your progress this cycle." },
+      { "text": "💜 A milestone streak during a quieter week — that's commitment.", "streak_states": ["milestone"] }
+    ],
+    "phase_transition": [
+      { "text": "You've shifted into your luteal phase — a good time to slow things down. 🌙" },
+      { "text": "Luteal phase has started 💜 Be extra kind to yourself this week." }
+    ]
+  }
+}
