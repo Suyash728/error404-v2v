@@ -1,39 +1,41 @@
-const ITEMS = [
-  {
-    icon: "🧘",
-    title: "Gentle yoga",
-    description: "Focus on restorative poses to ease tension.",
-  },
-  {
-    icon: "🥗",
-    title: "Nutrient-rich foods",
-    description: "Try adding leafy greens or nuts to your meals today.",
-  },
-] as const;
+import { apiServer } from "@/lib/api-server";
+import { TodayCardBody, type RecommendationsResponse } from "./today-card-body";
 
-export function TodayCard() {
-  return (
-    <section aria-labelledby="today-heading" className="rounded-2xl bg-surface p-4 shadow-sm">
-      <h2 id="today-heading" className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
-        <span aria-hidden="true">✨</span>
-        Today for you
-      </h2>
-      <div className="flex flex-col gap-3">
-        {ITEMS.map((item) => (
-          <div key={item.title} className="flex items-start gap-3 rounded-xl bg-brand-blush p-3">
-            <div
-              aria-hidden="true"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/20 text-lg"
-            >
-              {item.icon}
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">{item.title}</p>
-              <p className="text-sm text-foreground/70">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+// services/gamification.py (streak/petals) doesn't exist yet (CC-18), but
+// /recommendations/today is real — no placeholder needed for the happy
+// path. This fallback only covers the endpoint being unreachable/erroring,
+// same "render something today" spirit as dashboard/page.tsx's own
+// getPrediction() fallback.
+const FALLBACK: RecommendationsResponse = {
+  phase: "luteal",
+  cycle_day: 1,
+  content: {
+    phase_summary: "Here's a gentle starting point for today — your personalized guidance is on its way.",
+    workout: {
+      intensity_label: "Moderate",
+      plan: ["Take a short walk", "Stretch for 10 minutes", "Rest if your body asks for it"],
+      avoid: "Nothing specific today — just listen to your body.",
+    },
+    nutrition: {
+      focus: "Balanced, nourishing meals",
+      foods: ["Dal", "Rice", "Seasonal vegetables", "Fruit", "Nuts", "Dahi (yogurt)"],
+      tip: "Stay hydrated and eat when you're hungry.",
+    },
+  },
+  adaptive_line: null,
+  disclaimer:
+    "Cycle-phase fitness and nutrition guidance draws on emerging, still-developing research — it's a helpful starting point, not a strict prescription. Listen to your body first.",
+};
+
+async function getRecommendations(): Promise<RecommendationsResponse> {
+  try {
+    return await apiServer.get<RecommendationsResponse>("/recommendations/today");
+  } catch {
+    return FALLBACK;
+  }
+}
+
+export async function TodayCard() {
+  const recommendations = await getRecommendations();
+  return <TodayCardBody recommendations={recommendations} />;
 }

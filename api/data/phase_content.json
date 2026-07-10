@@ -1,0 +1,74 @@
+{
+  "menstrual": {
+    "phase_summary": "Your period's here — a natural time to rest, restore, and listen closely to your body.",
+    "workout": {
+      "intensity_label": "Restorative",
+      "plan": [
+        "Gentle yoga or stretching, 15-20 minutes",
+        "A slow, easy walk outdoors if you feel up to it",
+        "Light mobility work — hips, lower back, shoulders",
+        "Breathing exercises or a short meditation"
+      ],
+      "avoid": "Skip high-intensity training and heavy lifting this week — your body's energy is focused elsewhere."
+    },
+    "nutrition": {
+      "focus": "Replenishing iron and easing cramps",
+      "foods": ["Palak (spinach)", "Dates", "Jaggery", "Rajma (kidney beans)", "Beetroot", "Til (sesame seeds)", "Warm soups", "Ginger tea"],
+      "tip": "Pair iron-rich foods like palak or rajma with vitamin C — citrus or tomatoes — to help your body absorb more of it."
+    }
+  },
+  "follicular": {
+    "phase_summary": "Energy's rising — a great window to build strength and push a little harder.",
+    "workout": {
+      "intensity_label": "Build & HIIT",
+      "plan": [
+        "Strength training with progressive overload, 3-4 sets",
+        "HIIT intervals, 20-25 minutes",
+        "Try a new class or workout style — motivation tends to run high",
+        "Active recovery walk or light cardio on off days"
+      ],
+      "avoid": "No major restrictions — just build up intensity gradually rather than maxing out on day one."
+    },
+    "nutrition": {
+      "focus": "Fueling muscle repair and rising energy needs",
+      "foods": ["Sprouted moong", "Dahi (yogurt)", "Eggs or paneer", "Methi (fenugreek) leaves", "Oats", "Almonds", "Seasonal fruit", "Chana (chickpeas)"],
+      "tip": "Protein at each meal — dahi, paneer, or chana — supports the muscle-building your body's primed for right now."
+    }
+  },
+  "ovulatory": {
+    "phase_summary": "You're at your peak — strength, coordination, and energy tend to be at their best.",
+    "workout": {
+      "intensity_label": "Peak performance",
+      "plan": [
+        "Your hardest training days — heavy lifts or high-intensity intervals",
+        "A good window to try a personal best if you've been building toward one",
+        "Group classes or partner workouts — social energy tends to be high",
+        "Explosive or power-based movements"
+      ],
+      "avoid": "Don't skip your warm-up even on high-energy days — ligaments are slightly more flexible now, so joints need extra care."
+    },
+    "nutrition": {
+      "focus": "Supporting peak energy and hormonal balance",
+      "foods": ["Til (sesame seeds)", "Flaxseeds", "Leafy greens", "Dahi (yogurt)", "Walnuts", "Seasonal vegetables", "Lentils (dal)", "Fresh coconut"],
+      "tip": "Healthy fats like til and flaxseeds support hormone production during this phase — a small daily handful goes a long way."
+    }
+  },
+  "luteal": {
+    "phase_summary": "Energy's winding down and cravings may pick up — a good week to ease off and listen in.",
+    "workout": {
+      "intensity_label": "Deload",
+      "plan": [
+        "Lower the intensity — moderate cardio or lighter weights",
+        "Pilates, yoga, or mobility-focused sessions",
+        "Shorter sessions are okay — consistency matters more than intensity now",
+        "An extra rest day if you're feeling low on energy"
+      ],
+      "avoid": "This isn't the week to chase a new personal best — pushing too hard now often backfires."
+    },
+    "nutrition": {
+      "focus": "Steadying blood sugar and easing cravings",
+      "foods": ["Dark chocolate, in moderation", "Dates", "Sweet potato", "Jaggery", "Rajma (kidney beans)", "Methi (fenugreek) leaves", "Nuts", "Warm khichdi"],
+      "tip": "Cravings for something sweet are common now — dates or a square of dark chocolate can satisfy it without a big sugar crash."
+    }
+  }
+}

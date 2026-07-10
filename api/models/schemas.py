@@ -73,6 +73,32 @@ class Prediction(BaseModel):
     confidence: ConfidenceLevel
 
 
+class WorkoutContent(BaseModel):
+    intensity_label: str
+    plan: list[str]
+    avoid: str
+
+
+class NutritionContent(BaseModel):
+    focus: str
+    foods: list[str]
+    tip: str
+
+
+class PhaseContent(BaseModel):
+    phase_summary: str
+    workout: WorkoutContent
+    nutrition: NutritionContent
+
+
+class RecommendationsResponse(BaseModel):
+    phase: CyclePhaseName
+    cycle_day: int
+    content: PhaseContent
+    adaptive_line: Optional[str] = None
+    disclaimer: str
+
+
 class DailyLogBase(BaseModel):
     log_date: date
     flow: Optional[int] = Field(default=None, ge=0, le=4)
