@@ -137,7 +137,7 @@ class Reminder(ReminderBase):
 class RiskFlagBase(BaseModel):
     flag_type: str
     severity: str
-    fired_rules: list = Field(default_factory=list)
+    fired_rules: list[str] = Field(default_factory=list)
     explanation: Optional[str] = None
     llm_provider: Optional[str] = None
 

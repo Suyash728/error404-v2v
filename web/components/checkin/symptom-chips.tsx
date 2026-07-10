@@ -20,6 +20,9 @@ const SYMPTOMS = [
   { value: "spotting", label: "Spotting" },
   { value: "diarrhea", label: "Diarrhea" },
   { value: "constipation", label: "Constipation" },
+  { value: "excess_hair_growth", label: "Excess hair growth" },
+  { value: "weight_gain", label: "Weight gain" },
+  { value: "dizziness", label: "Dizziness" },
 ] as const;
 
 export type SymptomValue = (typeof SYMPTOMS)[number]["value"];

@@ -16,3 +16,6 @@ class Symptom(str, Enum):
     SPOTTING = "spotting"
     DIARRHEA = "diarrhea"
     CONSTIPATION = "constipation"
+    EXCESS_HAIR_GROWTH = "excess_hair_growth"
+    WEIGHT_GAIN = "weight_gain"
+    DIZZINESS = "dizziness"
