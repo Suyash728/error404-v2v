@@ -16,6 +16,8 @@ from constants import Symptom
 
 IntentionMode = Literal["track", "avoid", "ttc"]
 ReminderKind = Literal["period", "fertile", "contraception", "appointment"]
+CyclePhaseName = Literal["menstrual", "follicular", "ovulatory", "luteal"]
+ConfidenceLevel = Literal["high", "medium", "low"]
 
 
 class ProfileBase(BaseModel):
@@ -55,6 +57,20 @@ class Cycle(CycleBase):
     user_id: uuid.UUID
 
     model_config = {"from_attributes": True}
+
+
+class FertileWindow(BaseModel):
+    start: date
+    end: date
+
+
+class Prediction(BaseModel):
+    next_period_start: date
+    fertile_window: FertileWindow
+    current_phase: CyclePhaseName
+    cycle_day: int
+    cycle_length: int
+    confidence: ConfidenceLevel
 
 
 class DailyLogBase(BaseModel):
