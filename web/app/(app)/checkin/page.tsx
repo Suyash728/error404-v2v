@@ -115,7 +115,7 @@ export default function CheckinPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-[480px] flex-col gap-6 px-5 pb-12 pt-2">
+    <main className="mx-auto flex max-w-[480px] flex-col gap-6 px-5 pb-28 pt-2">
       <header className="flex items-center">
         <Link
           href="/dashboard"

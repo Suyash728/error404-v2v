@@ -1,8 +1,16 @@
-from fastapi import Depends, FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
-from core.security import get_current_user
-from routers import (
+# Must run before any of these imports touch os.environ (core.security and
+# core.supabase both read env vars, some at call time not import time, but
+# loading here up front means every path — including `uvicorn --reload`'s
+# subprocess — sees .env consistently).
+load_dotenv()
+
+from fastapi import Depends, FastAPI  # noqa: E402
+from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
+
+from core.security import get_current_user  # noqa: E402
+from routers import (  # noqa: E402
     account,
     calendar,
     cycles,

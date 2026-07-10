@@ -1,11 +1,12 @@
 fastapi
 uvicorn
+python-dotenv
 supabase
 httpx
 google-generativeai
 groq
 pydantic
-python-jose
+python-jose[cryptography]
 weasyprint
 numpy
 pytest
