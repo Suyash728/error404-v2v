@@ -43,6 +43,15 @@ Check for a `Makefile`, `package.json`, or `pyproject.toml` at the relevant root
 - Auth: every endpoint requires Supabase JWT verification except `/health`. Uses `supabase-py`.
 - LLM access is centralized: `services/llm_client.py` is the **only** module allowed to call an LLM. Primary model is Gemini 2.5 Flash, with Groq as fallback. Any feature needing LLM calls goes through this client rather than calling a provider SDK directly — this keeps provider swaps and fallback logic in one place.
 
+## Color usage rules
+Phase and brand colors have three tiers — never use them interchangeably:
+- `phase-X` / `brand-primary` (raw accent): decorative fills only — icons, wheel segments, badges, gradient stops. NEVER as text, NEVER as a solid button background with text on top.
+- `phase-X-soft`: tinted card/chip backgrounds, paired with default `--foreground` text.
+- `phase-X-text` / `phase-ovulatory-accent-text`: the ONLY tokens allowed when a phase color is used AS text color on `--background`/`--surface`.
+- `--on-accent` (#000) / `--on-deep` (#FFFFFF): the ONLY tokens allowed as text color on top of a solid `--accent`/`--brand-deep` fill (e.g. primary buttons). Never assume `--foreground` or white is safe on a colored fill without checking TOKENS.md's contrast table.
+
+Every screen-conversion prompt must follow this without being reminded.
+
 ## Database invariants
 - A trigger on `auth.users` creates a `public.profiles` and `public.gamification` row (with defaults) for every user at signup. All backend code MUST assume these rows already exist: use `UPDATE` or upsert, never a plain `INSERT` that assumes the row is absent.
 - Onboarding UPDATEs the existing profile with the user's cycle data — it does not INSERT a new profile.

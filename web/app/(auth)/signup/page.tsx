@@ -92,7 +92,7 @@ export default function SignupPage() {
         </div>
 
         {error && (
-          <p role="alert" className="text-sm text-phase-menstrual">
+          <p role="alert" className="text-sm text-phase-menstrual-text">
             {error}
           </p>
         )}
