@@ -9,6 +9,52 @@ const config: Config = {
         foreground: "var(--foreground)",
         surface: "var(--surface)",
         border: "var(--border)",
+
+        brand: {
+          primary: "var(--color-primary)",
+          blush: "var(--color-blush)",
+          deep: "var(--color-deep)",
+        },
+
+        "on-accent": "var(--on-accent)",
+        "on-deep": "var(--on-deep)",
+
+        // Current active phase theme (set by PhaseThemeProvider). Use these
+        // for anything that should follow whatever phase is active right
+        // now; use `phase.*` below to reference a specific phase regardless
+        // of which one is active (e.g. the insights chart legend).
+        accent: "var(--accent)",
+        "accent-2": "var(--accent-2)",
+
+        phase: {
+          menstrual: {
+            DEFAULT: "var(--phase-menstrual)",
+            soft: "var(--phase-menstrual-soft)",
+            text: "var(--phase-menstrual-text)",
+          },
+          follicular: {
+            DEFAULT: "var(--phase-follicular)",
+            soft: "var(--phase-follicular-soft)",
+            text: "var(--phase-follicular-text)",
+          },
+          ovulatory: {
+            DEFAULT: "var(--phase-ovulatory)",
+            accent: "var(--phase-ovulatory-accent)",
+            soft: "var(--phase-ovulatory-soft)",
+            text: "var(--phase-ovulatory-text)",
+            "accent-text": "var(--phase-ovulatory-accent-text)",
+          },
+          luteal: {
+            DEFAULT: "var(--phase-luteal)",
+            "accent-2": "var(--phase-luteal-accent-2)",
+            soft: "var(--phase-luteal-soft)",
+            text: "var(--phase-luteal-text)",
+          },
+        },
+
+        // Placeholder scale from the initial scaffold. login/signup already
+        // reference these classes; left untouched so those pages don't
+        // shift underneath them. New work should use brand.*/phase.* above.
         pink: {
           50: "var(--pink-50)",
           100: "var(--pink-100)",
@@ -21,24 +67,12 @@ const config: Config = {
           800: "var(--pink-800)",
           900: "var(--pink-900)",
         },
-        phase: {
-          menstrual: {
-            DEFAULT: "var(--phase-menstrual)",
-            soft: "var(--phase-menstrual-soft)",
-          },
-          follicular: {
-            DEFAULT: "var(--phase-follicular)",
-            soft: "var(--phase-follicular-soft)",
-          },
-          ovulation: {
-            DEFAULT: "var(--phase-ovulation)",
-            soft: "var(--phase-ovulation-soft)",
-          },
-          luteal: {
-            DEFAULT: "var(--phase-luteal)",
-            soft: "var(--phase-luteal-soft)",
-          },
-        },
+      },
+      backgroundImage: {
+        "phase-gradient": "var(--gradient)",
+      },
+      fontFamily: {
+        sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
       },
     },
   },

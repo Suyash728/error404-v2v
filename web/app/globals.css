@@ -3,10 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #fffbfc;
-  --foreground: #2b1420;
+  /* Brand pink base (design-reference/design.md) */
+  --color-primary: #ff6b9d;
+  --color-blush: #ffe4ec;
+  --color-deep: #c2185b;
+
+  /* Neutral surface system (design-reference/arohi_wellness/DESIGN.md) */
+  --background: #fff8f8;
+  --foreground: #25181c;
   --surface: #ffffff;
-  --border: #f4dbe3;
+  --border: #f5dce3;
+
+  /* Text-on-solid-fill tokens. Separate from --foreground: calibrated
+     against accent fills specifically, not body copy on --background.
+     See TOKENS.md "Contrast audit" for the numbers behind these. */
+  --on-accent: #000000;
+  --on-deep: #ffffff;
+
+  /* Cycle-phase palettes, always addressable regardless of the active phase.
+     Each phase carries:
+       - DEFAULT: decorative fill (icons, wheel segments, badges)
+       - soft: light tint for card/chip backgrounds
+       - text: darkened AA-safe variant, for when the phase color is used
+         AS text color on --background/--surface (e.g. a "Luteal Phase"
+         headline) rather than as a fill with its own on-color. */
+  --phase-menstrual: #e63970;
+  --phase-menstrual-soft: #fbe2e8;
+  --phase-menstrual-text: #db1c58;
+
+  --phase-follicular: #ff8fb1;
+  --phase-follicular-soft: #fff0f3;
+  --phase-follicular-text: #e10044;
+
+  --phase-ovulatory: #ff4081;
+  --phase-ovulatory-accent: #ffd54f;
+  --phase-ovulatory-soft: #ffe8ee;
+  --phase-ovulatory-text: #e1004c;
+  --phase-ovulatory-accent-text: #8f6d00;
+
+  --phase-luteal: #ce93d8;
+  /* Derived, not sourced: design-reference has no second luteal color.
+     phase-luteal at 75% lightness (HSL), see TOKENS.md. */
+  --phase-luteal-accent-2: #9b6ea2;
+  --phase-luteal-soft: #f3d9e1;
+  --phase-luteal-text: #ab46bc;
+
+  /* Active phase theme: swapped by PhaseThemeProvider via [data-phase] on
+     the app shell (see components/phase-theme.tsx). Defaults to menstrual
+     until a phase is set. */
+  --accent: var(--phase-menstrual);
+  --accent-2: var(--color-deep);
+  --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
 
   --pink-50: #fff5f7;
   --pink-100: #ffe4ec;
@@ -18,16 +65,30 @@
   --pink-700: #b01f4d;
   --pink-800: #85173b;
   --pink-900: #5c0f28;
+}
 
-  /* Cycle phase palettes: each has a DEFAULT (accents, icons) and a -soft (backgrounds, chips) */
-  --phase-menstrual: #d6336c;
-  --phase-menstrual-soft: #fbe0ea;
-  --phase-follicular: #e8890c;
-  --phase-follicular-soft: #fff3d6;
-  --phase-ovulation: #0ca678;
-  --phase-ovulation-soft: #d9f7ef;
-  --phase-luteal: #6741d9;
-  --phase-luteal-soft: #ece6fd;
+[data-phase="menstrual"] {
+  --accent: var(--phase-menstrual);
+  --accent-2: var(--color-deep);
+  --gradient: linear-gradient(135deg, var(--phase-menstrual), var(--color-deep));
+}
+
+[data-phase="follicular"] {
+  --accent: var(--phase-follicular);
+  --accent-2: var(--color-primary);
+  --gradient: linear-gradient(135deg, var(--phase-follicular), var(--color-primary));
+}
+
+[data-phase="ovulatory"] {
+  --accent: var(--phase-ovulatory);
+  --accent-2: var(--phase-ovulatory-accent);
+  --gradient: linear-gradient(135deg, var(--phase-ovulatory), var(--phase-ovulatory-accent));
+}
+
+[data-phase="luteal"] {
+  --accent: var(--phase-luteal);
+  --accent-2: var(--phase-luteal-accent-2);
+  --gradient: linear-gradient(135deg, var(--phase-luteal), var(--phase-luteal-accent-2));
 }
 
 @media (prefers-reduced-motion: reduce) {
