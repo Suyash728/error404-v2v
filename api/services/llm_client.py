@@ -33,11 +33,11 @@ def _provider_chain() -> list[str]:
     return [primary, *fallbacks]
 
 
-def _call_gemini(system: str, user: str, json_mode: bool, max_tokens: int) -> str:
+def _call_gemini(system: str, user: str, json_mode: bool, max_tokens: int, temperature: float) -> str:
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     model = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system)
 
-    generation_config = {"max_output_tokens": max_tokens}
+    generation_config = {"max_output_tokens": max_tokens, "temperature": temperature}
     if json_mode:
         generation_config["response_mime_type"] = "application/json"
 
@@ -49,7 +49,7 @@ def _call_gemini(system: str, user: str, json_mode: bool, max_tokens: int) -> st
     return response.text
 
 
-def _call_groq(system: str, user: str, json_mode: bool, max_tokens: int) -> str:
+def _call_groq(system: str, user: str, json_mode: bool, max_tokens: int, temperature: float) -> str:
     client = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=TIMEOUT_SECONDS)
 
     kwargs = {}
@@ -59,6 +59,7 @@ def _call_groq(system: str, user: str, json_mode: bool, max_tokens: int) -> str:
     response = client.chat.completions.create(
         model=GROQ_MODEL,
         max_tokens=max_tokens,
+        temperature=temperature,
         messages=[
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -68,22 +69,30 @@ def _call_groq(system: str, user: str, json_mode: bool, max_tokens: int) -> str:
     return response.choices[0].message.content
 
 
-def _call_provider(provider: str, system: str, user: str, json_mode: bool, max_tokens: int) -> str:
+def _call_provider(
+    provider: str, system: str, user: str, json_mode: bool, max_tokens: int, temperature: float
+) -> str:
     if provider == "gemini":
-        return _call_gemini(system, user, json_mode, max_tokens)
+        return _call_gemini(system, user, json_mode, max_tokens, temperature)
     if provider == "groq":
-        return _call_groq(system, user, json_mode, max_tokens)
+        return _call_groq(system, user, json_mode, max_tokens, temperature)
     raise LLMUnavailable(f"unknown LLM provider: {provider}")
 
 
-def complete(system: str, user: str, json_mode: bool = False, max_tokens: int = 400) -> LLMResult:
+def complete(
+    system: str,
+    user: str,
+    json_mode: bool = False,
+    max_tokens: int = 400,
+    temperature: float = 0.7,
+) -> LLMResult:
     chain = _provider_chain()
     call_start = time.monotonic()
 
     for position, provider in enumerate(chain):
         for attempt in range(RETRIES_PER_PROVIDER + 1):
             try:
-                text = _call_provider(provider, system, user, json_mode, max_tokens)
+                text = _call_provider(provider, system, user, json_mode, max_tokens, temperature)
             except Exception:
                 logger.warning(
                     "llm provider attempt failed",

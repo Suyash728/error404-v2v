@@ -8,7 +8,6 @@ from services import cycles as cycles_service
 from services import logs as logs_service
 from services import profiles as profiles_service
 from services import risk as risk_service
-from services.rule_engine import evaluate_all
 
 router = APIRouter(prefix="/risk", tags=["risk"])
 
@@ -24,5 +23,4 @@ def evaluate_risk(current_user: dict = Depends(get_current_user)) -> list[RiskFl
     daily_logs = logs_service.list_logs(user_id, today - timedelta(days=DAILY_LOG_WINDOW_DAYS), today)
     profile = profiles_service.get_profile(user_id)
 
-    fired_flags = evaluate_all(cycles, daily_logs, profile)
-    return risk_service.create_risk_flags(user_id, fired_flags)
+    return risk_service.evaluate_and_persist(user_id, cycles, daily_logs, profile)
