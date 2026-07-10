@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { api } from "@/lib/api";
+import { apiServer } from "@/lib/api-server";
 import type { CyclePhase } from "@/components/phase-theme";
 import { CycleWheel } from "@/components/dashboard/cycle-wheel";
 import { SakhiGreeting } from "@/components/dashboard/sakhi-greeting";
@@ -29,7 +29,7 @@ const PHASE_MESSAGE: Record<CyclePhase, string> = {
 // endpoint ships, no other change needed here.
 async function getPrediction(): Promise<CyclePrediction> {
   try {
-    return await api.get<CyclePrediction>("/cycles/prediction");
+    return await apiServer.get<CyclePrediction>("/cycles/prediction");
   } catch {
     return { phase: "luteal", cycle_day: 22, cycle_length: 28, next_period_in_days: 6 };
   }
